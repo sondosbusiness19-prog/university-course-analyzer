@@ -65,12 +65,27 @@ void addCourse(vector<Course>& courses)
 
     cout << "Enter difficulty (1-5): ";
     cin >> difficulty;
+     while (difficulty < 1 || difficulty > 5)
+    {
+        cout << "Invalid difficulty. Enter a value between 1 and 5: ";
+        cin >> difficulty;
+    }
 
     cout << "Enter study hours per week: ";
     cin >> studyHours;
+     while (studyHours < 0)
+    {
+        cout << "Study hours cannot be negative. Enter again: ";
+        cin >> studyHours;
+    }
 
     cout << "Enter grade: ";
     cin >> grade;
+    while (grade < 0 || grade > 100)
+    {
+        cout << "Invalid grade. Enter a value between 0 and 100: ";
+        cin >> grade;
+    }
 
     Course newCourse(name, difficulty, studyHours, grade);
 
