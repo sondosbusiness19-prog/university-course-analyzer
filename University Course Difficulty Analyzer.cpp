@@ -77,6 +77,11 @@ void addCourse(vector<Course>& courses)
     courses.push_back(newCourse);
 
     cout << "\nCourse added successfully!\n";
+    if (courses.size() < 2)
+{
+    cout << "You need at least 2 courses to compare courses.\n";
+    return;
+}
 }
 
 
@@ -185,6 +190,12 @@ double calculateAverageDifficulty(const vector<Course>& courses)
 
 void findBestCourse(const vector<Course>& courses)
 {
+    if (courses.size() < 2)
+    {
+        cout << "\nYou need at least 2 courses to compare.\n";
+        return;
+    }
+
     if (courses.empty())
     {
         cout << "\nThere are no courses.\n";
@@ -220,6 +231,11 @@ void findBestCourse(const vector<Course>& courses)
 
 void findHardestCourse(const vector<Course>& courses)
 {
+    if (courses.size() < 2)
+    {
+        cout << "\nYou need at least 2 courses to compare.\n";
+        return;
+    }
     if (courses.empty())
     {
         cout << "\nThere are no courses.\n";
